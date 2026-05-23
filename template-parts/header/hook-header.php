@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/dist/css/common.css">
