@@ -1,0 +1,1 @@
+var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=(e,t)=>()=>(t||(e((t={exports:{}}).exports,t),e=null),t.exports),n=t((()=>{$(document).ready(function(){console.log(`Hello, Enterbuy!`)})}));export{t as n,e as r,n as t};
