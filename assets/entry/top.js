@@ -1,4 +1,2 @@
-// Top page entry point
-import '../scss/top.scss';
-import '../js/common.js';
-import '../js/top.js';
+import '../scss/pages/top.scss';
+import '../js/pages/top.js';

@@ -9,4 +9,5 @@
         <?php get_template_part( 'template-parts/header/hook-header' ); ?>
     </head>
 
-    <body>
+    <body <?php body_class(); ?> <?php body_attributes(); ?>>
+        <?php get_template_part( 'template-parts/header/header-content' ); ?>

@@ -1,0 +1,4 @@
+:root {
+    --vw-base : 375;
+    --px-to-vw: calc(100vw / var(--vw-base));
+}
