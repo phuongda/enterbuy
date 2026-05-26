@@ -1,0 +1,14 @@
+.c-panel {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+
+    .l-title {
+        width: 100%;
+    }
+
+    .l-content {
+        width  : 100%;
+        display: none;
+    }
+}

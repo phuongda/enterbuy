@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.l-main {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.l-main1 {
+    background: rgba(0, 128, 0, 0.1);
+
+    @include pc {
+        padding: 30px 0;
+    }
+
+    @include sp {
+        padding: 20px 0;
+    }
+}
+
+.l-main2 {
+    background: rgba(0, 128, 0, 0.1);
+}
+
+.l-main>[class*="l-main"] {
+    width: 100%;
+}
+
+.l-main>[class*="l-main"]>.l-container>*:not(:last-child) {
+
+    @include pc {
+        margin-bottom: 30px;
+    }
+
+    @include sp {
+        margin-bottom: 20px;
+    }
+}

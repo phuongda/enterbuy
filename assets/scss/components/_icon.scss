@@ -1,0 +1,118 @@
+@use "../abstracts/" as *;
+
+.c-icon {
+    background-position: center;
+    background-size    : contain;
+    background-repeat  : no-repeat;
+
+    &.icon-cart {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-cart.svg");
+    }
+
+    &.icon-search {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-search.svg");
+    }
+
+    &.icon-search-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-search-green.svg");
+    }
+
+    &.icon-phone-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-phone-green.svg");
+    }
+
+    &.icon-cart-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-cart-green.svg");
+    }
+
+    &.icon-menu {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-menu.svg");
+    }
+
+    &.icon-close {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-close.svg");
+    }
+
+    &.icon-arrow-black {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-arrow-white.svg");
+        filter          : grayscale(100%) brightness(0%);
+    }
+
+    &.icon-arrow-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-arrow-green.svg");
+    }
+
+    &.icon-location {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-location.png");
+    }
+
+    &.icon-location-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-location-green.png");
+    }
+
+    &.icon-phone {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-phone.png");
+        transform       : scaleX(1);
+    }
+
+    &.icon-phone2 {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-phone2.png");
+        transform       : scaleX(-1);
+    }
+
+    &.icon-time {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-time.png");
+    }
+
+    &.icon-mail-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-mail-green.png");
+    }
+
+    &.icon-earth-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-earth-green.png");
+    }
+
+    &.icon-hotline-green {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-hotline-green.png");
+    }
+
+    &.icon-zalo {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-zalo.svg");
+    }
+
+    &.icon-advise {
+        background-image: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-advise.png");
+    }
+
+    &.icon-may-loc-nuoc-ion-kiem {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/may-loc-nuoc-ion-kiem-icon.png");
+    }
+
+    &.icon-loc-tong-dau-nguon {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/loc-tong-dau-nguon-icon.png");
+    }
+
+    &.icon-may-loc-nuoc-gia-dinh {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/may-loc-nuoc-gia-dinh-icon.png");
+    }
+
+    &.icon-may-loc-nuoc-thuong-mai {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/may-loc-nuoc-thuong-mai-icon-icon-70x70.png");
+    }
+
+    &.icon-loi-loc-va-phu-kien {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/loi-loc-va-phu-kien-icon-70x70.png");
+    }
+
+    &.icon-dich-vu-doc-quyen {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/dich-vu-doc-quyen-70x70.png");
+    }
+
+    &.icon-giai-phap-loc-vip {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/Giai-phap-loc-vip-icon-70x70.png");
+    }
+
+    &.icon-san-pham-khac {
+        background-image: url("#{$siteUrl}/wp-content/uploads/2024/10/san-pham-khac-icon-70x70.png");
+    }
+}

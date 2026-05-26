@@ -1,0 +1,30 @@
+{
+  "_chunk.js": {
+    "file": "js/chunks/chunk.js",
+    "name": "chunk"
+  },
+  "assets/entry/common.js": {
+    "file": "js/common.js",
+    "name": "common",
+    "src": "assets/entry/common.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk.js"
+    ],
+    "css": [
+      "css/common.css"
+    ]
+  },
+  "assets/entry/top.js": {
+    "file": "js/top.js",
+    "name": "top",
+    "src": "assets/entry/top.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk.js"
+    ],
+    "css": [
+      "css/top.css"
+    ]
+  }
+}

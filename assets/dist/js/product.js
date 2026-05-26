@@ -1,1 +1,0 @@
-import{n as e,r as t,t as n}from"./common2.js";var r=t((()=>{})),i=e((()=>{$(document).ready(function(){console.log(`Product page loaded!`)})})),a=e((()=>{r(),n(),i()}));export default a();
