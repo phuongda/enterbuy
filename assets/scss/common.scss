@@ -1,3 +1,21 @@
-.test {
-    background: pink;
-}
+@use "./abstracts/" as *;
+
+@use "./base/reset";
+@use "./base/fonts";
+@use "./base/root";
+
+@use "./components/title";
+@use "./components/button";
+@use "./components/icon";
+@use "./components/tabs";
+@use "./components/panel";
+
+@use "./layout/body";
+@use "./layout/column";
+@use "./layout/container";
+@use "./layout/content";
+@use "./layout/main";
+@use "./layout/header";
+@use "./layout/footer";
+
+@use "./utilities/utilities";

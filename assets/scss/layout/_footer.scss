@@ -1,0 +1,510 @@
+@use "../abstracts/"as *;
+
+.l-footer {
+    width     : 100%;
+    display   : flex;
+    flex-wrap : wrap;
+    background: $color_white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+    z-index   : 2;
+
+    @include sp {
+        padding-bottom: 60px;
+    }
+
+    .l-container {
+        justify-content: space-between;
+        align-items    : flex-start;
+    }
+
+    .l-content {
+        flex-direction: column;
+        flex-direction: column;
+
+        .c-icon {
+            width       : 15px;
+            height      : 15px;
+            display     : inline-block;
+            margin-right: 5px;
+
+            @include pc {
+                margin-bottom: -2px;
+            }
+
+            @include sp {
+                margin-bottom: -3px;
+            }
+        }
+    }
+
+    .footer-main {
+        width          : 100%;
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: space-between;
+
+        @include pc {
+            padding: 50px 0 40px;
+        }
+
+
+        @include sp {
+            padding: 25px 0 30px;
+        }
+
+        .l-title {
+            width    : 100%;
+            display  : flex;
+            flex-wrap: wrap;
+
+            .c-title {
+                margin-bottom: 15px;
+
+                @include pc {
+                    font-size: 14px;
+                }
+
+                @include sp {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .footer-more {
+
+        .l-title {
+            width    : 100%;
+            display  : flex;
+            flex-wrap: wrap;
+
+            .c-title {
+                margin-bottom: 15px;
+
+                @include pc {
+                    font-size: 14px;
+                }
+
+                @include sp {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .footer-left {
+        width    : auto;
+        display  : flex;
+        flex-wrap: wrap;
+        width    : 100%;
+        max-width: 400px;
+
+        @include pc {
+            margin-top: 10px;
+        }
+
+        @include sp {
+            margin-top: 5px;
+        }
+
+        .c-title {
+            margin-left  : unset;
+            margin-right : unset;
+            margin-bottom: 15px;
+            font-weight  : 700;
+            color        : $color_black3;
+        }
+
+        a {
+            margin-bottom: 10px;
+            font-size    : 12px;
+            line-height  : 1.4;
+            color        : $color_black4;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size    : 12px;
+            line-height  : 1.4;
+            color        : $color_black4;
+        }
+    }
+
+    .footer-right {
+        width    : auto;
+        display  : flex;
+        flex-wrap: wrap;
+        height   : max-content;
+
+        @include pc {
+            margin-top: 10px;
+        }
+
+        @include sp {
+            margin-top: 25px;
+        }
+
+        .c-title {
+            margin-left  : unset;
+            margin-right : unset;
+            margin-bottom: 15px;
+            font-weight  : 700;
+            color        : $color_black3;
+        }
+
+        a {
+            margin-bottom: 10px;
+            font-size    : 12px;
+            line-height  : 1.4;
+            color        : $color_black4;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size    : 12px;
+            line-height  : 1.4;
+            color        : $color_black4;
+        }
+
+        .c-cols {
+            column-gap: 40px;
+
+            .c-cols__left {
+                height         : 100%;
+                display        : flex;
+                flex-direction : column;
+                justify-content: space-between;
+                row-gap        : 15px;
+            }
+
+            .c-cols__right {
+                display        : flex;
+                flex-direction : column;
+                justify-content: space-between;
+
+                @include pc {
+                    height : 100%;
+                    row-gap: 15px;
+                }
+
+                @include sp {
+                    width  : 100%;
+                    height : auto;
+                    row-gap: 0;
+                }
+            }
+
+            .c-col {
+                width         : auto;
+                flex-direction: column;
+            }
+        }
+
+        @include sp {
+
+            .c-panel {
+                width      : calc(100% + (10px * 2)) !important;
+                margin-left: -10px;
+
+                &:first-child {
+                    border-top: 1px solid $color_grey2;
+                }
+
+                .l-title {
+                    padding      : 10px 10px;
+                    border-bottom: 1px solid $color_grey2;
+                    background   : linear-gradient(to bottom, #f7f7f7, #f0f0f0);
+
+                    .c-title {
+                        width          : 100%;
+                        justify-content: space-between;
+                        align-items    : center;
+                        margin-bottom  : 0 !important;
+                        font-size      : 12px;
+                        line-height    : 1.2;
+                        cursor         : pointer;
+
+                        &::after {
+                            content   : "";
+                            width     : 10px;
+                            height    : 10px;
+                            background: url(https://enterbuy.vn/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg) center / contain no-repeat;
+                            transition: 0.5s;
+                            transform : rotate(90deg);
+                            filter    : brightness(0%);
+                        }
+                    }
+
+                    &.active {
+
+                        .c-title::after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+
+                .l-content {
+                    padding      : 15px 10px;
+                    border-bottom: 1px solid $color_grey2;
+
+                    .wraper {
+                        width         : 100%;
+                        display       : flex;
+                        flex-wrap     : wrap;
+                        flex-direction: column;
+                        row-gap       : 15px;
+
+                        a {
+                            display        : flex;
+                            justify-content: space-between;
+                            align-items    : center;
+                            margin-bottom  : 0;
+                            line-height    : 1.2;
+
+                            &::after {
+                                content   : "";
+                                width     : 10px;
+                                height    : 10px;
+                                background: url(https://enterbuy.vn/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg) center / contain no-repeat;
+                                transition: 0.5s;
+                                filter    : grayscale(100%) brightness(30%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-logo {
+        width  : 140px;
+        height : 45px;
+        display: flex;
+
+        img {
+            object-fit     : cover;
+            object-position: center;
+        }
+    }
+
+    .c-license {
+        width          : 100%;
+        display        : flex;
+        flex-wrap      : nowrap;
+        flex-direction : row;
+        justify-content: flex-start;
+        align-items    : center;
+
+        @include pc {
+            gap: 20px;
+        }
+
+        @include sp {
+            gap: 10px;
+        }
+
+        .item {
+            width        : auto;
+            height       : auto;
+            margin-bottom: 0;
+
+            img {
+                width          : auto;
+                object-fit     : contain;
+                object-position: center;
+            }
+        }
+
+        .item.brand-1 {
+            img {
+                height: 25px;
+            }
+        }
+
+        .item.brand-2 {
+            img {
+                height: 25px;
+            }
+        }
+
+        .item.brand-3 {
+            img {
+                height: 25px;
+            }
+        }
+
+        .item.brand-4 {
+            img {
+                height: 16px;
+            }
+        }
+    }
+
+    .c-social {
+        width          : 100%;
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: flex-start;
+        align-items    : center;
+
+        @include pc {
+            gap: 20px;
+        }
+
+        @include sp {
+            gap: 10px;
+        }
+
+        .item {
+            width        : 35px;
+            height       : 35px;
+            margin-bottom: 0;
+            border-radius: 50px;
+            box-shadow   : rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            overflow     : hidden;
+
+            img {
+                width          : 100%;
+                height         : 100%;
+                object-fit     : contain;
+                object-position: center;
+                transform      : scale(1.25);
+            }
+        }
+
+        .item.logo-facebook {
+            background: #039be5;
+        }
+
+        .item.logo-tiktok {
+            background: #212121;
+        }
+
+        .item.logo-youtube {
+            background: #ee2e24;
+        }
+
+        .item.logo-twitter {
+            background: #03a9f4;
+        }
+    }
+
+    .footer-since {
+        width          : 100%;
+        min-height     : 30px;
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        align-items    : center;
+        padding        : 10px 5px 10px;
+        background     : $color_orange;
+        line-height    : 1;
+        text-align     : center;
+        color          : $color_white;
+
+        @include pc {
+            font-size: 12px;
+        }
+
+        @include sp {
+            font-size: 10px;
+        }
+    }
+}
+
+.l-footer-banner {
+    width  : 100%;
+    display: flex;
+
+    @include pc {
+        margin-top   : 50px;
+        margin-bottom: 50px;
+    }
+
+    @include sp {
+        margin-top   : 30px;
+        margin-bottom: 30px;
+    }
+
+    .swiper {
+        width: 100%;
+    }
+}
+
+.l-ctas-footer {
+    width     : 100%;
+    display   : flex;
+    flex-wrap : wrap;
+    background: linear-gradient(180deg, $color_orange 6.38%, $color_orange2 83%);
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+    position  : relative;
+    z-index   : 1;
+
+    @include pc {
+        padding: 40px 0;
+    }
+
+    @include sp {
+        padding: 30px 10px;
+    }
+}
+
+.c-ctas-footer {
+    width          : 100%;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-evenly;
+
+    @include sp {
+        gap: 20px;
+    }
+
+    .item {
+        display       : flex;
+        flex-direction: row;
+        align-items   : center;
+        color         : $color_white;
+        overflow      : hidden;
+
+        @include pc {
+            width     : max-content;
+            column-gap: 10px;
+        }
+
+        @include sp {
+            width     : calc((90% - (20px * (2 - 1))) / 2);
+            column-gap: 10px;
+        }
+
+        img {
+            border-radius: 50%;
+            background   : $color_white;
+            box-shadow   : rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+            @include pc {
+                width : 45px;
+                height: 45px;
+            }
+
+            @include sp {
+                width : 35px;
+                height: 35px;
+            }
+        }
+
+        h3 {
+            margin-bottom: 0;
+            font-weight  : 700;
+            line-height  : 1.4;
+            color        : $color_white;
+
+            @include pc {
+                font-size: 14px;
+            }
+
+            @include sp {
+                font-size: 12px;
+            }
+        }
+    }
+}

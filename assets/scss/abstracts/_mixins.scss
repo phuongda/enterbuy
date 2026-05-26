@@ -1,0 +1,21 @@
+@use "./config"as config;
+
+@function vw-pc($font) {
+    @return calc($font / 1920) * 100vw;
+}
+
+@function vw-sp($font) {
+    @return calc($font / 375) * 100vw;
+}
+
+@mixin sp {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: 769px) {
+        @content;
+    }
+}

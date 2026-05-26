@@ -1,0 +1,1 @@
+<script type="module" src="<?= get_template_directory_uri(); ?>/assets/dist/js/common.js"></script>

@@ -1,0 +1,11 @@
+@use "../abstracts/"as *;
+
+body {
+    background-color: $color_white;
+    color           : $color_black2;
+    font-family     : $fontMain, sans-serif;
+    font-size       : $fontSize;
+    font-weight     : 300;
+    line-height     : 1.4;
+    letter-spacing  : -0.25px;
+}
