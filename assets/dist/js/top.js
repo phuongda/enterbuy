@@ -1,1 +1,1 @@
-import{n as e,t}from"./chunks/chunk.js";var n=e((()=>{})),r=t((()=>{n()}));export default r();
+import{c as e,l as t,n,o as r,s as i,t as a}from"./chunks/slider.js";var o=t((()=>{})),s=e((()=>{r(),n(),i(function(){a(`mainvisual`),a(`slide`,[`.swiper-product`,!1])})})),c=e((()=>{o(),s()}));export default c();

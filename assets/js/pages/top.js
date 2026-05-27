@@ -1,11 +1,7 @@
-// import {
-//   initMainVisual,
-//   initBrandsSlider,
-//   initProductSlider
-// } from '../modules/slider';
+import $ from 'jquery';
+import initSlider from '../modules/slider.js';
 
-// export default function initTopPage() {
-//   initMainVisual();
-//   initBrandsSlider();
-//   initProductSlider();
-// }
+$(function () {
+  initSlider('mainvisual');
+  initSlider('slide', [".swiper-product", false]);
+});

@@ -1,14 +1,17 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
+
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 window.$ = window.jQuery = $;
 window.Swiper = Swiper;
 
 import initHeader from './modules/header';
-import initSlider from './modules/slider.js';
-import initTabs from './modules/tabs.js';
-import initPanel from './modules/panel.js';
+import initSlider from './modules/slider';
+import initTabs from './modules/tabs';
+import initPanel from './modules/panel';
 
 $(function () {
   initHeader();
