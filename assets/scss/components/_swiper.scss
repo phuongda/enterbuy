@@ -1,0 +1,192 @@
+@use "../abstracts/"as *;
+
+.c-swiper {
+    .swiper {
+        width   : 100%;
+        padding : 20px;
+        position: relative;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width          : 40px;
+            height         : 40px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            background     : rgba(0, 0, 0, 0.3);
+            border-radius  : 40px;
+            right          : 0;
+            transition     : 0.5s;
+            opacity        : 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::after {
+                content   : "";
+                width     : 20px;
+                height    : 20px;
+                background: url("#{$siteUrl}/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg") center/contain no-repeat;
+                color     : transparent;
+            }
+
+            svg {
+                display: none;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 0;
+
+            &::after {
+                transform  : scaleX(-1);
+                margin-left: -3px;
+            }
+        }
+
+        .swiper-button-next {
+            &::after {
+                margin-left: 3px;
+            }
+        }
+    }
+
+    &:not(.swiper-hotsale) {
+        width : calc(100% + 40px);
+        margin: -10px -20px;
+
+        .swiper {
+            width   : 100%;
+            padding : 10px 20px;
+            position: relative;
+
+            &::before,
+            &::after {
+                content   : "";
+                width     : 15px;
+                height    : 100%;
+                background: rgb(229 242 229);
+                position  : absolute;
+                top       : 0;
+                z-index   : 2;
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
+    }
+
+    &.swiper-hotsale {
+        .swiper {
+            display       : flex;
+            flex-direction: column;
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width : 35px;
+                height: 45px;
+            }
+
+            .swiper-button-next {
+                border-radius: 40px 0 0 40px;
+
+                &::after {
+                    margin-left: 8px;
+                }
+            }
+
+            .swiper-button-prev {
+                border-radius: 0 40px 40px 0;
+
+                &::after {
+                    margin-left: -8px;
+                }
+            }
+
+            .swiper-pagination {
+                width     : max-content;
+                display   : flex;
+                column-gap: 5px;
+                margin    : 15px auto 0;
+                position  : unset;
+                opacity   : 0.5;
+                transition: 0.5s;
+
+                .swiper-pagination-bullet {
+                    width : 8px;
+                    height: 8px;
+                    margin: 0;
+
+                    &.swiper-pagination-bullet-active {
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .swiper-pagination {
+                opacity: 1;
+            }
+        }
+    }
+
+    // responsive
+    @media (max-width: 991px) {
+        .swiper {
+            padding: 10px;
+
+            .swiper-wrapper {
+                margin-left: 0;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                &::after {
+                    width : 15px;
+                    height: 15px;
+                }
+            }
+        }
+
+        &:not(.swiper-hotsale) {
+            width : calc(100% + 20px);
+            margin: -10px;
+
+            .swiper {
+                padding: 10px;
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        &.swiper-hotsale {
+            .swiper {
+                padding: 15px 10px;
+
+                .swiper-pagination {
+                    margin-top: 10px;
+                }
+
+                .swiper-button-next {
+                    border-radius: 30px 0 0 30px;
+                }
+
+                .swiper-button-next,
+                .swiper-button-prev {
+                    width : 30px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

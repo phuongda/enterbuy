@@ -1,7 +1,7 @@
 {
-  "_chunk.js": {
-    "file": "js/chunks/chunk.js",
-    "name": "chunk"
+  "_slider.js": {
+    "file": "js/chunks/slider.js",
+    "name": "slider"
   },
   "assets/entry/common.js": {
     "file": "js/common.js",
@@ -9,7 +9,7 @@
     "src": "assets/entry/common.js",
     "isEntry": true,
     "imports": [
-      "_chunk.js"
+      "_slider.js"
     ],
     "css": [
       "css/common.css"
@@ -21,7 +21,7 @@
     "src": "assets/entry/top.js",
     "isEntry": true,
     "imports": [
-      "_chunk.js"
+      "_slider.js"
     ],
     "css": [
       "css/top.css"

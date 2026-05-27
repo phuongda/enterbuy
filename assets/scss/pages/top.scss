@@ -1,3 +1,35 @@
-.top-hero {
-    padding: 20px;
+@use "../abstracts/"as *;
+
+@use "../components/mainvisual";
+@use "../components/product";
+
+.l-main {
+    padding   : 30px 0;
+    background: rgba(0, 128, 0, 0.1);
+
+    .l-section {
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .l-products {
+
+        .c-title {
+            color: $color-green;
+
+            @include pc {
+                font-size: 30px;
+            }
+
+            @include sp {
+                font-size: 20px;
+            }
+        }
+
+        .c-subtitle {
+            color: $color-green;
+        }
+    }
 }

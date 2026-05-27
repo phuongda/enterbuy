@@ -4,7 +4,10 @@
 <?php get_header(); ?>
 
 <main class="l-main">
-    <h1>Top Page</h1>
+    <div class="l-container">
+        <?php get_template_part( 'template-parts/top/content-mainvisual' ); ?>
+        <?php get_template_part( 'template-parts/top/content-products' ); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>
