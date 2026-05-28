@@ -26,7 +26,7 @@ $others = get_field('others', 'option');
                         <?php endif; ?>
                         
                         <?php if (!empty($company_name)) : ?>
-                            <p class="mb-5 font-bold text-14"><?php echo convertBreak($company_name, true); ?></p>
+                            <p class="mb-5 font-bold text-14"><?php echo replace_br($company_name, true); ?></p>
                         <?php endif; ?>
 
                         <?php if (!empty($tax_information)) : ?>

@@ -23,7 +23,37 @@ function print_pre($content, $hidden = false) {
     echo '</pre>';
 }
 
-function br_mobile($with_space = false) {
+function get_pcbr($with_space = false) {
+    $result = $with_space ? ' ' : '';
+
+    if (!wp_is_mobile()) {
+        $result = '<br>';
+    }
+
+    return $result;
+}
+
+function get_spbr($with_space = false) {
+    $result = $with_space ? ' ' : '';
+
+    if (wp_is_mobile()) {
+        $result = '<br>';
+    }
+
+    return $result;
+}
+
+function the_pcbr($with_space = false) {
+    $result = $with_space ? ' ' : '';
+
+    if (!wp_is_mobile()) {
+        $result = '<br>';
+    }
+
+    echo $result;
+}
+
+function the_spbr($with_space = false) {
     $result = $with_space ? ' ' : '';
 
     if (wp_is_mobile()) {
@@ -33,12 +63,12 @@ function br_mobile($with_space = false) {
     echo $result;
 }
 
-function convertBreak($text, $with_space = false) {
+function replace_br($text, $with_space = false) {
     $space_str = $with_space ? ' ' : '';
     $regex_arr = ['{$brpc}', '{$brsp}'];
-    $brpc = !wp_is_mobile() ? '<br>' : $space_str;
-    $brsp = wp_is_mobile() ? '<br>' : $space_str;
-    $replace_arr = [$brpc, $brsp];
+    $brpc = get_pcbr() ?? $space_str;
+    $brsp = get_spbr() ?? $space_str;
+    $replace_arr = [get_pcbr(), get_spbr()];
     
     $result = str_replace($regex_arr, $replace_arr, $text);
 

@@ -15,7 +15,7 @@ if (!empty($datas)) :
             ?>
                 <a href="<?php echo $link; ?>" class="item">
                     <img src="<?php echo $image; ?>" loading="lazy" <?php device_width_height(30, 30, 20, 20); ?>>
-                    <span><?php echo convertBreak($title, true); ?></span>
+                    <span><?php echo replace_br($title, true); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>

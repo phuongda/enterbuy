@@ -1,0 +1,51 @@
+@use "../abstracts/"as *;
+
+.l-hotsale {
+    width              : 100%;
+    height             : max-content;
+    display            : flex;
+    flex-wrap          : wrap;
+    border-radius      : 10px;
+    background         : url("#{$siteUrl}/wp-content/uploads/2022/03/uu-dai-thang-scaled.jpg");
+    background-color   : #007540;
+    background-size    : cover;
+    background-position: bottom center;
+    box-shadow         : rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+    .c-title {
+        justify-content: center;
+        margin-top     : 20px;
+        margin-bottom  : 0;
+        text-transform : uppercase;
+        text-align     : center;
+        color          : #ffffff;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: vw-sp(20);
+        }
+    }
+
+    @media (max-width: 991px) {
+        width        : calc(100% + 20px);
+        margin       : 0 -10px;
+        border-radius: 0;
+    }
+}
+
+.c-hotsale {
+
+    .item {
+
+        @include pc {
+            max-width: 275px;
+        }
+
+        @include sp {
+            max-width: vw-sp(156);
+        }
+    }
+}

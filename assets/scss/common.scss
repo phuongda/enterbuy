@@ -4,15 +4,6 @@
 @use "./base/fonts";
 @use "./base/root";
 
-@use "./components/title";
-@use "./components/subtitle";
-@use "./components/button";
-@use "./components/icon";
-@use "./components/tabs";
-@use "./components/panel";
-@use "./components/product";
-@use "./components/swiper";
-
 @use "./layout/body";
 @use "./layout/column";
 @use "./layout/container";
@@ -21,5 +12,15 @@
 @use "./layout/section";
 @use "./layout/header";
 @use "./layout/footer";
+
+@use "./components/title";
+@use "./components/subtitle";
+@use "./components/button";
+@use "./components/icon";
+@use "./components/tabs";
+@use "./components/panel";
+@use "./components/swiper";
+@use "./components/product";
+@use "./components/hotsale";
 
 @use "./utilities/utilities";

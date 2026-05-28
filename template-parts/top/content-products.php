@@ -7,8 +7,8 @@ if (!empty($datas)) :
 
     if (count($products_group) > 0) :
 ?>
-    <section class="l-products">
-        <h2 class="c-title"><?php echo convertBreak($title, true); ?></h2>
+    <section class="l-section l-products">
+        <h2 class="c-title"><?php echo replace_br($title, true); ?></h2>
         <div class="c-cols">
             <?php
                 foreach ($products_group as $products) :
