@@ -108,6 +108,11 @@ section {
 }
 
 /* HTML5 hidden-attribute fix for newer browsers */
+html,
+body {
+    overflow-x: hidden;
+}
+
 [hidden],
 .hidden {
     display: none;

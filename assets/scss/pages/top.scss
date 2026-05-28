@@ -1,7 +1,8 @@
 @use "../abstracts/"as *;
 
 @use "../components/mainvisual";
-@use "../components/product";
+@use "../components/highlight";
+@use "../components/brands";
 
 .l-main {
     padding   : 30px 0;
@@ -14,7 +15,8 @@
         }
     }
 
-    .l-products {
+    .l-products,
+    .l-brands {
 
         .c-title {
             color: $color-green;

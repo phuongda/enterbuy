@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
 
+import { config } from '../core/config.js';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function initSlider(key, data) {
@@ -72,7 +73,7 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
       let parent_width = $(class_name).width();
       let child_width = $el.width();
 
-      if (!isMobile && child_width < parent_width) return;
+      if (!config.isMobile && child_width < parent_width) return;
 
       var swiper = new Swiper(`${class_name} .swiper`, {
         modules: [Autoplay],
@@ -87,7 +88,7 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
         touchRatio: 0.2,
       });
       break;
-    case '.c-ctas':
+    case '.c-highlight':
       var swiper = new Swiper(`${class_name} .swiper`, {
         modules: [Autoplay],
         loop: true,
