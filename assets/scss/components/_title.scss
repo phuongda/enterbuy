@@ -1,15 +1,40 @@
+@use "../abstracts/"as *;
+
+.l-title {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+
+    &.center {
+        justify-content: center;
+    }
+
+    @include sp {
+        .subtitle {
+            margin-bottom: 5px;
+        }
+    }
+}
+
 .c-title {
     width        : 100%;
     display      : flex;
     flex-wrap    : wrap;
     margin-bottom: 20px;
-    font-size    : 24px;
     font-weight  : 700;
     line-height  : 1.2;
 
+    @include pc {
+        font-size: 24px;
+    }
+
+    @include sp {
+        font-size: 20px;
+    }
+
     .center {
-        margin-left: auto;
+        margin-left : auto;
         margin-right: auto;
-        text-align: center;
+        text-align  : center;
     }
 }

@@ -2,6 +2,7 @@
 require_once get_stylesheet_directory() . '/inc/config.php';
 require_once get_stylesheet_directory() . '/inc/setup.php';
 require_once get_stylesheet_directory() . '/inc/helpers.php';
+require_once get_stylesheet_directory() . '/inc/shortcode.php';
 
 function body_attributes() {
     $page = 'default';
@@ -66,9 +67,9 @@ function the_spbr($with_space = false) {
 function replace_br($text, $with_space = false) {
     $space_str = $with_space ? ' ' : '';
     $regex_arr = ['{$brpc}', '{$brsp}'];
-    $brpc = get_pcbr() ?? $space_str;
-    $brsp = get_spbr() ?? $space_str;
-    $replace_arr = [get_pcbr(), get_spbr()];
+    $brpc = get_pcbr() ?: $space_str;
+    $brsp = get_spbr() ?: $space_str;
+    $replace_arr = [$brpc, $brsp];
     
     $result = str_replace($regex_arr, $replace_arr, $text);
 

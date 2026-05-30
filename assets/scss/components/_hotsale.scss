@@ -14,18 +14,19 @@
 
     .c-title {
         justify-content: center;
-        margin-top     : 20px;
         margin-bottom  : 0;
         text-transform : uppercase;
         text-align     : center;
         color          : #ffffff;
 
         @include pc {
-            font-size: 30px;
+            margin-top: 25px;
+            font-size : 30px;
         }
 
         @include sp {
-            font-size: vw-sp(20);
+            margin-top: 20px;
+            font-size : vw-sp(20);
         }
     }
 
@@ -46,6 +47,12 @@
 
         @include sp {
             max-width: vw-sp(156);
+        }
+
+        .c-figure {
+            @include pc {
+                height: 255px;
+            }
         }
     }
 }

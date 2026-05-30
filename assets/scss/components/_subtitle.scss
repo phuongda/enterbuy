@@ -1,25 +1,33 @@
+@use "../abstracts/"as *;
+
 .c-subtitle {
     width      : max-content;
     display    : flex;
     flex-wrap  : wrap;
     align-items: center;
     margin     : 0 0 20px 0;
-    font-size  : 24px;
     font-weight: 700;
 
+    @include pc {
+        font-size: 20px;
+    }
+
+    @include sp {
+        font-size: 18px;
+    }
+
     .c-icon {
-        width        : 18px;
-        height       : 18px;
-        margin-left  : 5px;
+        width      : 18px;
+        height     : 18px;
+        margin-left: 5px;
     }
 
     @media (max-width: 991px) {
         margin-bottom: 15px;
-        font-size    : 18px;
 
         .c-icon {
-            width        : 15px;
-            height       : 15px;
+            width : 15px;
+            height: 15px;
         }
     }
 }

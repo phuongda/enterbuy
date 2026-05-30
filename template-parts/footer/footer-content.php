@@ -203,11 +203,11 @@ $others = get_field('others', 'option');
                         </div>
                     <?php endif; ?>
                     <div class="c-cols__right">
-                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel' : ''; ?>">
-                            <div class="l-title">
-                                <h3 class="c-title mb-sp-10">Về Enterbuy</h3>
+                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel js-panel' : ''; ?>">
+                            <div class="l-title<?php echo wp_is_mobile() ? ' js-panel-title' : ''; ?>">
+                                <h3 class="c-title">Về Enterbuy</h3>
                             </div>
-                            <div class="l-content">
+                            <div class="l-content<?php echo wp_is_mobile() ? ' js-panel-content' : ''; ?>">
                                 <div class="wraper flex flex-column">
                                     <?php
                                         foreach ($about_enterbuy as $item) :
@@ -220,11 +220,11 @@ $others = get_field('others', 'option');
                             </div>
                         </div>
                         <?php if (wp_is_mobile()) : ?>
-                            <div class="c-col<?php echo wp_is_mobile() ? ' c-panel' : ''; ?>">
-                                <div class="l-title">
-                                    <h3 class="c-title mb-sp-10">Hỗ trợ khách hàng</h3>
+                            <div class="c-col<?php echo wp_is_mobile() ? ' c-panel js-panel' : ''; ?>">
+                                <div class="l-title<?php echo wp_is_mobile() ? ' js-panel-title' : ''; ?>">
+                                    <h3 class="c-title">Hỗ trợ khách hàng</h3>
                                 </div>
-                                <div class="l-content">
+                                <div class="l-content<?php echo wp_is_mobile() ? ' js-panel-content' : ''; ?>">
                                     <div class="wraper flex flex-column">
                                         <?php
                                             foreach ($customer_support as $item) :
@@ -237,11 +237,11 @@ $others = get_field('others', 'option');
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel' : ''; ?>">
-                            <div class="l-title">
-                                <h3 class="c-title mb-sp-10">Đối tác</h3>
+                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel js-panel' : ''; ?>">
+                            <div class="l-title<?php echo wp_is_mobile() ? ' js-panel-title' : ''; ?>">
+                                <h3 class="c-title">Đối tác</h3>
                             </div>
-                            <div class="l-content">
+                            <div class="l-content<?php echo wp_is_mobile() ? ' js-panel-content' : ''; ?>">
                                 <div class="wraper flex flex-column">
                                     <?php
                                         foreach ($partners as $item) :
@@ -253,11 +253,11 @@ $others = get_field('others', 'option');
                                 </div>
                             </div>
                         </div>
-                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel' : ''; ?>">
-                            <div class="l-title">
-                                <h3 class="c-title mb-sp-10">Khác</h3>
+                        <div class="c-col<?php echo wp_is_mobile() ? ' c-panel js-panel' : ''; ?>">
+                            <div class="l-title<?php echo wp_is_mobile() ? ' js-panel-title' : ''; ?>">
+                                <h3 class="c-title">Khác</h3>
                             </div>
-                            <div class="l-content">
+                            <div class="l-content<?php echo wp_is_mobile() ? ' js-panel-content' : ''; ?>">
                                 <div class="wraper flex flex-column">
                                     <?php
                                         foreach ($others as $item) :

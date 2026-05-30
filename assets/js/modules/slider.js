@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
 
-import { config } from '../core/config.js';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { config } from '../core/config';
+import { Autoplay, Pagination, Navigation, Grid } from 'swiper/modules';
 
 export default function initSlider(key, data) {
   switch (key) {
@@ -15,32 +15,36 @@ export default function initSlider(key, data) {
     case 'footer-banner':
       slideFooterBanner();
       break;
-    // case 'gallery':
-    //   slideGallery();
-    //   break;
+    case '2row':
+      slide2Row(data[0], data[1], data[2], data[3]);
+      break;
+    case 'gallery':
+      slideGallery();
+      break;
     // case 'thumb':
     //   slideThumb();
     //   break;
     // case 'slidesp':
     //   slideSPOnly(data[0], data[1], data[2], data[3]);
     //   break;
-    // case '2row':
-    //   slide2Row(data[0], data[1], data[2], data[3]);
-    //   break;
   }
 }
 
 function slideMainvisual() {
   let class_name = '.c-mainvisual';
-  const $el = $(`${class_name} .swiper`);
+  let class_swiper = `${class_name} .swiper`;
+  const $el = $(class_swiper);
 
   if (!$el.length) return;
 
   if ($el.data('swiper-initialized')) return;
 
-  const swiper = new Swiper($el[0], {
+  let slideCount = $el.find('.swiper-slide').length;
+  let slidesPerView = 1;
+
+  const swiper = new Swiper(class_swiper, {
     modules: [Autoplay, Pagination, Navigation],
-    loop: true,
+    loop: slideCount > slidesPerView,
     loopFillGroupWithBlank: true,
     autoplay: {
       delay: 5000,
@@ -61,11 +65,15 @@ function slideMainvisual() {
 }
 
 function slideCenter(class_name, center_slide = true, auto_play = false, slde_speed = 500) {
-  const $el = $(`${class_name} .swiper`);
+  let class_swiper = `${class_name} .swiper`;
+  const $el = $(class_swiper);
 
   if (!$el.length) return;
 
   if ($el.data('swiper-initialized')) return;
+
+  let slideCount;
+  let slidesPerView;
 
   switch (class_name) {
     case '.c-brands':
@@ -73,11 +81,14 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
       let parent_width = $(class_name).width();
       let child_width = $el.width();
 
-      if (!config.isMobile && child_width < parent_width) return;
+      if (!config.is_mobile && child_width < parent_width) return;
 
-      var swiper = new Swiper(`${class_name} .swiper`, {
+      slideCount = $el.find('.swiper-slide').length;
+      slidesPerView = config.is_mobile ? 2 : 5;
+
+      const swiper = new Swiper(class_swiper, {
         modules: [Autoplay],
-        loop: true,
+        loop: slideCount > slidesPerView,
         loopFillGroupWithBlank: true,
         autoplay: auto_play ? { delay: 2000, disableOnInteraction: false } : false,
         speed: slde_speed,
@@ -89,9 +100,12 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
       });
       break;
     case '.c-highlight':
-      var swiper = new Swiper(`${class_name} .swiper`, {
+      slideCount = $el.find('.swiper-slide').length;
+      slidesPerView = config.is_mobile ? 2 : 3;
+
+      const swiper2 = new Swiper(class_swiper, {
         modules: [Autoplay],
-        loop: true,
+        loop: slideCount > slidesPerView,
         loopFillGroupWithBlank: true,
         autoplay: auto_play ? { delay: 5000, disableOnInteraction: false } : false,
         speed: slde_speed,
@@ -108,9 +122,12 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
       });
       break;
     default:
-      var swiper = new Swiper(`${class_name} .swiper`, {
+      slideCount = $el.find('.swiper-slide').length;
+      slidesPerView = config.is_mobile ? 2.2 : 4;
+
+      const swiper3 = new Swiper(class_swiper, {
         modules: [Autoplay, Pagination, Navigation],
-        loop: true,
+        loop: slideCount > slidesPerView,
         loopFillGroupWithBlank: true,
         autoplay: auto_play ? { delay: 2000, disableOnInteraction: false } : false,
         speed: slde_speed,
@@ -137,24 +154,111 @@ function slideCenter(class_name, center_slide = true, auto_play = false, slde_sp
   $el.data('swiper-initialized', true);
 }
 
-function slideFooterBanner() {
-  let class_name = '.l-footer-banner';
-  const $el = $(`${class_name} .swiper`);
+function slide2Row(class_name, center_slide = true, auto_play = false, slde_speed = 500) {
+  let class_swiper = `${class_name} .swiper`;
+  const $el = $(class_swiper);
 
   if (!$el.length) return;
 
   if ($el.data('swiper-initialized')) return;
 
-  const swiper = new Swiper($el[0], {
+  const swiper = new Swiper(class_swiper, {
+    modules: [Autoplay, Pagination, Navigation, Grid],
+    autoplay: auto_play ? { delay: 2000, disableOnInteraction: false } : false,
+    speed: slde_speed,
+    centeredSlides: false,
+    grid: {
+      rows: 2,
+      fill: 'row',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2.2,
+        spaceBetween: 10,
+        grid: {
+          rows: 1,
+        },
+      },
+      769: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        grid: {
+          rows: 2,
+        },
+      },
+    },
+    navigation: {
+      nextEl: `${class_name} .swiper-button-next`,
+      prevEl: `${class_name} .swiper-button-prev`,
+    },
+    pagination: {
+      el: `${class_name} .swiper .swiper-pagination`,
+      clickable: true,
+    },
+  });
+
+  $el.data('swiper-initialized', true);
+}
+
+function slideGallery() {
+  let class_name = '.c-gallery';
+  let class_swiper = `${class_name} .swiper`;
+  const $el = $(class_swiper);
+
+  if (!$el.length) return;
+
+  if ($el.data('swiper-initialized')) return;
+
+  const swiper = new Swiper(class_swiper, {
     modules: [Autoplay, Pagination, Navigation],
     loop: true,
+    loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed: 2000,
+    spaceBetween: 40,
+    breakpoints: {
+      769: {
+        spaceBetween: 50,
+      },
+    },
+    navigation: {
+      nextEl: class_name + " .swiper-button-next",
+      prevEl: class_name + " .swiper-button-prev",
+    },
+    pagination: {
+      el: class_name + " .swiper .swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  $el.data('swiper-initialized', true);
+}
+
+function slideFooterBanner() {
+  let class_name = '.l-footer-banner';
+  let class_swiper = `${class_name} .swiper`;
+  const $el = $(class_swiper);
+
+  if (!$el.length) return;
+
+  if ($el.data('swiper-initialized')) return;
+
+  let slideCount = $el.find('.swiper-slide').length;
+  let slidesPerView = 1;
+
+  const swiper = new Swiper(class_swiper, {
+    modules: [Autoplay, Pagination, Navigation],
+    loop: slideCount > slidesPerView,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
     },
     speed: 2000,
     pagination: {
-      el: `${class_name} .swiper-pagination`,
+      el: `${class_name} .swiper .swiper-pagination`,
       clickable: true,
     },
     navigation: {

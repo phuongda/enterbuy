@@ -194,16 +194,15 @@
                 }
             }
 
-            .c-col {
+            .c-col:not(.c-panel) {
                 width         : auto;
                 flex-direction: column;
             }
         }
 
         @include sp {
-
             .c-panel {
-                width      : calc(100% + (10px * 2)) !important;
+                width      : calc(100% + (10px * 2));
                 margin-left: -10px;
 
                 &:first-child {
@@ -219,7 +218,7 @@
                         width          : 100%;
                         justify-content: space-between;
                         align-items    : center;
-                        margin-bottom  : 0 !important;
+                        margin-bottom  : 0;
                         font-size      : 12px;
                         line-height    : 1.2;
                         cursor         : pointer;
@@ -228,7 +227,7 @@
                             content   : "";
                             width     : 10px;
                             height    : 10px;
-                            background: url(https://enterbuy.vn/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg) center / contain no-repeat;
+                            background: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-arrow-white.svg") center / contain no-repeat;
                             transition: 0.5s;
                             transform : rotate(90deg);
                             filter    : brightness(0%);
@@ -265,7 +264,7 @@
                                 content   : "";
                                 width     : 10px;
                                 height    : 10px;
-                                background: url(https://enterbuy.vn/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg) center / contain no-repeat;
+                                background: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-arrow-white.svg") center / contain no-repeat;
                                 transition: 0.5s;
                                 filter    : grayscale(100%) brightness(30%);
                             }
@@ -445,7 +444,7 @@
     }
 
     @include sp {
-        padding: 30px 10px;
+        padding: 30px 10px 25px;
     }
 }
 

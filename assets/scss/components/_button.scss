@@ -1,0 +1,115 @@
+@use "../abstracts/"as *;
+
+.c-button,
+.c-button2 {
+    height     : 45px;
+    font-weight: 700;
+    cursor     : pointer;
+    transition : 0.5s;
+}
+
+.c-button {
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
+    justify-content: center;
+    width          : 150px;
+    padding        : 10px;
+    border         : 1px solid #117641;
+    border-radius  : 10px;
+    background     : #117641;
+    color          : #fff;
+    font-size      : 14px;
+    line-height    : 1;
+    font-family    : "Segoe UI";
+    transition     : 0.5s;
+
+    &-full {
+        width: 100%;
+    }
+
+    &.btn-orange {
+        border    : 0;
+        background: linear-gradient(87.38deg, #ee7d22 6.38%, #f5a05b 83%);
+
+        &:hover {
+            background: #117641;
+            box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
+            color     : #ffffff;
+        }
+    }
+
+    .active,
+    &:hover {
+        background: transparent !important;
+        color     : #117641;
+    }
+}
+
+.c-button2 {
+    position       : relative;
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
+    justify-content: space-between;
+    width          : 240px;
+    padding        : 3px 3px 3px 20px;
+    border         : 0;
+    border-radius  : 50px;
+    background     : #0d9f17;
+    color          : #fff;
+    font-size      : 18px;
+    font-family    : Arial;
+    letter-spacing : 0.5px;
+
+    &-auto {
+        width: auto;
+    }
+
+    &-full {
+        width: 100%;
+    }
+
+    .c-button-icon {
+        position     : relative;
+        width        : calc(45px - 6px);
+        height       : 100%;
+        margin-left  : 10px;
+        overflow     : hidden;
+        border-radius: 50px;
+        background   : linear-gradient(-135deg, #0d9f17, #0d9f17);
+        box-shadow   : rgba(0, 0, 0, 0.3) -1.95px 0 2.6px;
+
+        &::after {
+            content  : "";
+            position : absolute;
+            top      : 50%;
+            right    : 45%;
+            width    : 24px;
+            height   : 24px;
+            transform: translate(50%, -50%);
+        }
+    }
+
+    &:hover {
+        box-shadow: rgba(17, 234, 1, 0.3) 0 0 0 3px;
+        color     : #fff;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .c-button,
+    .c-button2 {
+        height   : 40px;
+        font-size: 14px;
+    }
+
+    .c-button {
+        width: 150px;
+    }
+
+    .c-button2 {
+        width: 200px;
+    }
+}

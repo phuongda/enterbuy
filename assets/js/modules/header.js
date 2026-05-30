@@ -1,4 +1,4 @@
-import { config } from '../core/config.js';
+import { config } from '../core/config';
 
 export default function initHeader() {
   stickyHeader();
@@ -9,7 +9,7 @@ export default function initHeader() {
 }
 
 function stickyHeader() {
-  let header = config.isMobile ? $('.l-header .l-header-main') : $('.l-header .l-header-cate');
+  let header = config.is_mobile ? $('.l-header .l-header-main') : $('.l-header .l-header-cate');
   // let header_height = header.outerHeight();
   let header_height = 0;
   let offset = 0;
@@ -121,7 +121,7 @@ function toggleChildMenu() {
   $('.c-childs .item:first-child').addClass('active');
   $('.c-childs-content .item:first-child').addClass('is-show');
 
-  if (config.isMobile) {
+  if (config.is_mobile) {
     btn_tab.click(function (e) {
       let that = $(this);
       let tab_id = that.attr('data-tab');

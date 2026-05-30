@@ -1,0 +1,199 @@
+@use "../abstracts/"as *;
+
+.l-showroom {
+    width              : 100%;
+    display            : flex;
+    flex-wrap          : wrap;
+    padding            : 40px 0;
+    position           : relative;
+    background-image   : url("#{$siteUrl}/wp-content/uploads/2024/10/he-thong-showroom-enterbuy-background.jpg");
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: 50% 50%;
+
+    .c-title {
+        width         : max-content;
+        margin        : 0 auto 25px;
+        text-align    : center;
+        text-transform: uppercase;
+        color         : $color-white;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: 20px;
+        }
+    }
+
+    .l-content {
+        position: relative;
+    }
+
+    .c-select {
+        width         : 100%;
+        height        : 100%;
+        padding       : 10px 15px;
+        border        : 0;
+        border-radius : 50px;
+        font-size     : 14px;
+        text-transform: capitalize;
+        appearance    : none;
+        color         : $color-black2;
+    }
+
+    .c-select-wrap {
+        min-width  : 280px;
+        display    : flex;
+        flex-wrap  : wrap;
+        align-items: center;
+        position   : relative;
+
+        @include pc {
+            height  : 45px;
+            margin  : 0 auto 30px;
+            position: absolute;
+            top     : 20px;
+            left    : 0;
+        }
+
+        @include sp {
+            height: 40px;
+            margin: 0 auto 25px;
+        }
+
+        &::after {
+            width              : 18px;
+            height             : 18px;
+            content            : "";
+            background-image   : url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size    : contain;
+            background-position: center;
+            background-repeat  : no-repeat;
+            pointer-events     : none;
+            position           : absolute;
+            right              : 12px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 25px 0;
+
+        .c-title {
+            margin-bottom: 20px;
+        }
+
+        .c-select {
+            height       : 40px;
+            margin-bottom: 25px;
+            position     : unset;
+        }
+    }
+}
+
+.c-showroom {
+    width    : 100%;
+    height   : max-content;
+    display  : flex;
+    flex-wrap: wrap;
+
+    .c-cols {
+        >.c-col:first-child {
+            padding-top  : calc(45px + 50px);
+            padding-right: 20px;
+        }
+    }
+
+    >.item {
+        width     : 100%;
+        height    : max-content;
+        display   : none;
+        flex-wrap : wrap;
+        opacity   : 0;
+        transition: 0.5s;
+
+        &.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .c-icon {
+            width        : 20px;
+            height       : 20px;
+            margin-right : 10px;
+            margin-bottom: -3.5px;
+        }
+
+        .c-col {
+            flex-direction: column;
+        }
+    }
+
+    h3 {
+        margin-bottom: 10px;
+        font-size    : 20px;
+        font-weight  : 700;
+        color        : #ffffff;
+    }
+
+    a,
+    p {
+        display      : flex;
+        margin-bottom: 0;
+        font-size    : 16px;
+        color        : #ffffff;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    span {
+        flex: 1;
+    }
+
+    @media (max-width: 991px) {
+        .c-cols {
+            >.c-col:first-child {
+                margin-bottom: 25px;
+                padding      : 0;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        a,
+        p {
+            font-size: 14px;
+        }
+
+        >.item {
+            .c-icon {
+                width        : 15px;
+                height       : 15px;
+                margin-right : 5px;
+                margin-bottom: -2.5px;
+            }
+        }
+    }
+}
+
+.contact-showroom {
+    width     : 100%;
+    display   : flex;
+    flex-wrap : wrap;
+    margin-top: 20px;
+    gap       : 20px;
+
+    @media (max-width: 991px) {
+        margin-top: 5px;
+        gap       : 10px;
+
+        .c-button {
+            flex: 1;
+        }
+    }
+}

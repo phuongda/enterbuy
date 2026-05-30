@@ -1,0 +1,111 @@
+@use "../abstracts/"as *;
+
+.l-videos {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+    position : relative;
+
+    .c-title {
+        width         : max-content;
+        margin        : 0 auto;
+        text-align    : center;
+        text-transform: uppercase;
+        color         : $color-green;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: 20px;
+        }
+    }
+
+    .c-tabs {
+        @include pc {
+            margin-top: 30px;
+        }
+
+        @include sp {
+            margin-top: 10px;
+        }
+    }
+}
+
+.c-videos {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+    overflow : hidden;
+
+    .item {
+        max-width    : 230px;
+        height       : auto;
+        display      : flex;
+        flex-wrap    : wrap;
+        align-content: baseline;
+        padding      : 10px 10px 10px;
+        border-radius: 10px;
+        background   : #ffffff;
+        box-shadow   :
+            rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+            rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+        color     : $color-black2;
+        transition: 0.5s;
+        overflow  : hidden;
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.3) 0 2px 8px;
+        }
+
+        .c-figure {
+            width        : 100%;
+            height       : 206px;
+            display      : flex;
+            flex-wrap    : wrap;
+            margin-bottom: 0;
+            border-radius: 5px;
+            background   : #dddddd;
+            overflow     : hidden;
+
+            img {
+                width          : 100%;
+                height         : 100%;
+                object-fit     : cover;
+                object-position: center;
+                transition     : 0.5s;
+            }
+        }
+
+        h3 {
+            display           : -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-top        : 10px;
+            margin-bottom     : 0;
+            font-size         : 14px;
+            line-height       : 1.4;
+            font-family       : Arial;
+            overflow          : hidden;
+            word-break        : keep-all;
+            overflow-wrap     : break-word;
+            white-space       : normal;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .item {
+            max-width: vw-sp(156);
+            margin   : 0;
+
+            .c-figure {
+                height: calc((101 / 375) * 100vw);
+            }
+
+            h3 {
+                font-size: 12px;
+            }
+        }
+    }
+}

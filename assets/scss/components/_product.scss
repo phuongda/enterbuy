@@ -8,9 +8,31 @@
 
     .c-title {
         width         : max-content;
-        margin        : 10px auto 30px;
+        margin        : 0 auto 30px;
         text-align    : center;
         text-transform: uppercase;
+        color         : $color-green;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: 20px;
+        }
+    }
+
+    .c-subtitle {
+        text-align: center;
+        color     : $color-green;
+
+        @include pc {
+            font-size: 24px;
+        }
+
+        @include sp {
+            font-size: 18px;
+        }
     }
 
     .c-cols {
@@ -68,9 +90,9 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             color             : #4f4f4f;
-            font-size         : 14px !important;
+            font-size         : 14px;
             font-weight       : 300;
-            line-height       : 1.4 !important;
+            line-height       : 1.4;
             font-family       : Arial;
             overflow          : hidden;
             word-break        : keep-all;
@@ -159,12 +181,12 @@
             }
 
             .c-figure {
-                height       : calc(145 * var(--px-to-vw));
+                height       : vw-sp(136);
                 margin-bottom: 15px;
             }
 
             h3 {
-                font-size: 12px !important;
+                font-size: 12px;
             }
 
             .item-prices {
