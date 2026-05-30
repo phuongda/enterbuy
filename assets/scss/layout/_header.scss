@@ -771,6 +771,63 @@
         }
     }
 
+    .c-header-cate {
+        flex-wrap : wrap;
+        column-gap: 10px;
+        row-gap   : 10px;
+        padding   : 10px;
+
+        .item {
+            width         : calc((100% - (10px * (4 - 1))) / 4);
+            height        : 63px;
+            flex-direction: column;
+            justify-items : baseline;
+            flex          : unset;
+            gap           : 5px;
+            padding       : 5px 5px;
+
+            img {
+                width : 20px;
+                height: 20px;
+            }
+
+            span {
+                width     : 100%;
+                font-size : 10px;
+                text-align: center;
+            }
+        }
+    }
+
+    .l-header.sticky {
+        .l-header-cate {
+            margin-top: -156px;
+        }
+
+        + {
+            .clear {
+                height: 50px;
+            }
+        }
+    }
+
+    .l-header.is-search {
+        &:not(.sticky) {
+            + {
+                .clear {
+                    height: calc(50px + 156px + 55px);
+                }
+            }
+        }
+
+        .l-nav-search {
+            visibility    : visible;
+            margin-top    : 0;
+            opacity       : 1;
+            pointer-events: unset;
+        }
+    }
+
     .l-nav {
         .nav-menu {
             width      : auto;
@@ -840,63 +897,6 @@
             width          : 20px;
             height         : 20px;
             background-size: auto 100%;
-        }
-    }
-
-    .c-header-cate {
-        flex-wrap : wrap;
-        column-gap: 10px;
-        row-gap   : 10px;
-        padding   : 10px;
-
-        .item {
-            width         : calc((100% - (10px * (4 - 1))) / 4);
-            height        : 63px;
-            flex-direction: column;
-            justify-items : baseline;
-            flex          : unset;
-            gap           : 5px;
-            padding       : 5px 5px;
-
-            img {
-                width : 20px;
-                height: 20px;
-            }
-
-            span {
-                width     : 100%;
-                font-size : 10px;
-                text-align: center;
-            }
-        }
-    }
-
-    .l-header.sticky {
-        .l-header-cate {
-            margin-top: -156px;
-        }
-
-        + {
-            .clear {
-                height: 50px;
-            }
-        }
-    }
-
-    .l-header.is-search {
-        &:not(.sticky) {
-            + {
-                .clear {
-                    height: calc(50px + 156px + 55px);
-                }
-            }
-        }
-
-        .l-nav-search {
-            visibility    : visible;
-            margin-top    : 0;
-            opacity       : 1;
-            pointer-events: unset;
         }
     }
 
@@ -1260,7 +1260,7 @@
                     content   : "";
                     width     : 12px;
                     height    : 12px;
-                    background: url(https://enterbuy.vn/wp-content/themes/flatsome-child/assets/images/icon/icon-arrow-white.svg) center / contain no-repeat;
+                    background: url("#{$siteUrl}/wp-content/uploads/images/icon/icon-arrow-white.svg") center / contain no-repeat;
                     transition: 0.5s;
                     filter    : grayscale(100%) brightness(30%);
                 }

@@ -142,6 +142,10 @@ q:after {
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 table {
     border-collapse: collapse;
     border-spacing : 0;
@@ -152,6 +156,12 @@ img {
     height        : auto;
     max-width     : 100%;
     vertical-align: middle;
+}
+
+img:not([src]),
+img[src=""] {
+    visibility: hidden;
+    color     : transparent;
 }
 
 a {
@@ -190,8 +200,19 @@ button:hover {
     outline: none;
 }
 
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    border: 0;
+}
+
 .grecaptcha-badge {
     visibility: hidden;
+}
+
+textarea {
+    font-size  : 14px;
+    font-family: Arial;
 }
 
 // wordpress admin bar

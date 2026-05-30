@@ -1,0 +1,125 @@
+@use "../abstracts/"as *;
+
+.l-news {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+    position : relative;
+
+    .c-title {
+        width         : max-content;
+        margin        : 0 auto;
+        text-align    : center;
+        text-transform: uppercase;
+        color         : $color-green;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: 20px;
+        }
+    }
+
+    .c-tabs {
+        @include pc {
+            margin-top: 30px;
+        }
+
+        @include sp {
+            margin-top: 10px;
+        }
+    }
+}
+
+.c-news {
+    width    : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+    overflow : hidden;
+
+    .item {
+        height       : auto;
+        display      : flex;
+        flex-wrap    : wrap;
+        align-content: baseline;
+        font-family  : Arial;
+        transition   : 0.5s;
+
+        @include pc {
+            max-width: 285px;
+        }
+
+        @include sp {
+            max-width: vw-sp(156);
+        }
+
+        .c-figure {
+            width        : 100%;
+            height       : 176px;
+            display      : flex;
+            flex-wrap    : wrap;
+            margin-bottom: 0;
+            border-radius: 10px;
+            background   : #dddddd;
+            box-shadow   :
+                rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+                rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+            overflow: hidden;
+
+            img {
+                width          : 100%;
+                height         : 100%;
+                object-fit     : cover;
+                object-position: top;
+                transition     : 0.5s;
+            }
+        }
+
+        h3 {
+            display           : -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-top        : 15px;
+            margin-bottom     : 0;
+            font-size         : 14px;
+            font-weight       : 700;
+            line-height       : 1.4;
+            font-family       : Arial;
+            color             : $color-black2;
+            overflow          : hidden;
+            word-break        : keep-all;
+            overflow-wrap     : break-word;
+            white-space       : normal;
+
+            @media (max-width: 991px) {
+                font-size: 12px;
+            }
+        }
+
+        div {
+            display           : -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-top        : 10px;
+            margin-bottom     : 0;
+            color             : #3f3f3f;
+            font-size         : 12px;
+            overflow          : hidden;
+            word-break        : keep-all;
+            overflow-wrap     : break-word;
+            white-space       : normal;
+
+            @media (max-width: 991px) {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .c-figure {
+                height: calc((117 / 375) * 100vw);
+            }
+        }
+    }
+}

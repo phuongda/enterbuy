@@ -3,11 +3,11 @@ export default function initPanel() {
 }
 
 function togglePanel() {
-  let btn = $('.c-panel .l-title');
+  let btn = $('.js-panel .js-panel-title');
 
   btn.click(function (e) {
     let that = $(this);
-    let content = that.next('.l-content');
+    let content = that.next('.js-panel-content');
     if (!that.hasClass('active')) {
       that.addClass('active');
       content.slideDown();

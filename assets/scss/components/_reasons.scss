@@ -1,0 +1,43 @@
+@use "../abstracts/"as *;
+
+.l-reasons {
+    width          : 100%;
+    height         : max-content;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    margin         : 0 auto;
+    padding        : 35px 30px;
+    border-radius  : 10px;
+    background     : #ffffff;
+    box-shadow     : rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    overflow       : hidden;
+
+    .c-title {
+        width         : max-content;
+        margin        : 0 auto 30px;
+        text-align    : center;
+        text-transform: uppercase;
+        color         : $color-green;
+
+        @include pc {
+            font-size: 30px;
+        }
+
+        @include sp {
+            font-size: 20px;
+        }
+    }
+
+    img {
+        width: 1000px;
+    }
+
+    @media (max-width: 991px) {
+        padding: 20px 10px;
+
+        .c-title {
+            margin-bottom: 15px;
+        }
+    }
+}
